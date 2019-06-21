@@ -1,9 +1,12 @@
 import React from 'react';
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
-import { Header } from "../src/shared/Header";
-import { Footer } from "../src/shared/Footer";
-import { Users } from "../src/pages/users/Users";
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { Header } from "./shared/Header";
+import { Footer } from "./shared/Footer";
+import { Users } from "./pages/users/Users";
+import { UsersCreate } from "./pages/usersCreate/UsersCreate"
+import { UsersIdEdit } from "./pages/usersEdit/UsersIdEdit"
+import { UsersId } from "./pages/usersId/UsersId"
 
 
 
@@ -21,8 +24,11 @@ class App extends React.Component {
       <>
         <Header />
         <Switch>
-          <Route path="/" component={Users} />
-          {/* <Redirect from="/" to="/users"/> */}
+
+          <Route path='/users/usersedit' component={UsersIdEdit} />
+          <Route path='/users/:id' component={UsersId} />
+          <Route path='/users' component={Users} />
+          <Redirect to="/users" />
         </Switch>
         <Footer />
       </>
@@ -31,4 +37,6 @@ class App extends React.Component {
 }
 
 export default App;
+
+
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Users.css";
+import { Link } from "react-router-dom";
 import { fetchUsers } from "../../services/fetchUsers"
 
 
@@ -26,7 +27,6 @@ class Users extends React.Component {
 
 
     render() {
-        console.log(this.state.users)
         const users = this.state.users
 
         if (!users) {
@@ -36,20 +36,32 @@ class Users extends React.Component {
 
         return (
             <>
-                <h2>Users:</h2>
-                {users.map(user => (
-                    <div>
+                <br />
 
-                        <p>id: {user.id}</p>
-                        <p>name: {user.name}</p>
-                        <p>username: {user.username}</p>
-                        <p>email: {user.email}</p>
-                        <p>city: {user.city} </p>
-                        <hr></hr>
 
-                    </div>
-                ))}
-            </>
+                <table className="table">
+
+                    <tr>
+                        <td className="cellTitle">ID</td>
+                        <td className="cellTitle">name</td>
+                        <td className="cellTitle">username</td>
+                        <td className="cellTitle">e-mail</td>
+                        <td className="cellTitle" s>city</td>
+                    </tr>
+
+                    {users.map(user => (
+                        <tr>
+                            <td>{user.id}</td>
+                            <td><Link to={`/users/${user.id}`}>{user.name}</Link></td>
+                            <td>{user.username}</td>
+                            <td>{user.email}</td>
+                            <td>{user.city} </td>
+                        </tr>
+
+                    ))}
+
+                </table>
+                <br />            </>
         )
     }
 

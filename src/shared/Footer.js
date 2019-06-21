@@ -4,7 +4,7 @@ const Footer = () => {
 
     return (
         <footer>
-            <h2>Users CRUD</h2>
+            <h5 className="footerH5">Copyright (C) BIT 2019</h5>
         </footer>
     );
 }

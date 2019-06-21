@@ -1,24 +1,29 @@
 import React from 'react';
+import "../App.css"
 
 
 
 const Header = () => {
     return (
         <>
-            <ul class="nav nav-pills nav-fill">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Users</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Users ID</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Users Create</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" >Users Edit</a>
-                </li>
-            </ul>
+            <div>
+                <br />
+                <h1>Users CRUD</h1>
+                <ul className="nav nav-pills nav-fill" >
+                    <li className="header nav-item">
+                        <a className="nav-link " href="#">Users</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Users ID</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#" >Users Edit</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Users Create</a>
+                    </li>
+                </ul>
+            </div>
         </>
 
     );
